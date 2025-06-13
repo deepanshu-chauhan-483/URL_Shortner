@@ -1,8 +1,3 @@
-Here is your full `README.md` file for the **Advanced URL Shortener with Analytics Dashboard**, complete with all project documentation, setup instructions, API references (including JWT, QR, expiry, analytics, and tag filtering), and frontend behavior:
-
----
-
-```markdown
 # 🔗 Advanced URL Shortener with Analytics Dashboard
 
 A full-stack URL Shortening application with advanced features including tagging, analytics, expiry, QR code generation, and a React-based user dashboard.
@@ -56,6 +51,7 @@ A full-stack URL Shortening application with advanced features including tagging
 /models
 /routes
 server.js
+
 /frontend
 /components
 /pages
@@ -63,7 +59,7 @@ server.js
 main.jsx
 App.jsx
 
-````
+```
 
 ---
 
@@ -75,7 +71,7 @@ npm install
 cp .env.example .env
 # Fill in your MongoDB URI and BASE_URL
 npm run dev
-````
+```
 
 ### 🔐 `.env` Example
 
@@ -104,6 +100,8 @@ npm run dev
 
 Register a new user.
 
+#### Request Body
+
 ```json
 {
   "username": "akash",
@@ -118,6 +116,8 @@ Register a new user.
 
 Login with email & password.
 
+#### Request Body
+
 ```json
 {
   "email": "akash@example.com",
@@ -125,7 +125,7 @@ Login with email & password.
 }
 ```
 
-**Response**:
+#### Response
 
 ```json
 {
@@ -141,7 +141,7 @@ Login with email & password.
 
 **Headers**: `Authorization: Bearer <token>`
 
-Create a shortened URL with optional custom code, tags, and expiry.
+#### Request Body
 
 ```json
 {
@@ -152,7 +152,7 @@ Create a shortened URL with optional custom code, tags, and expiry.
 }
 ```
 
-**Response**:
+#### Response
 
 ```json
 {
@@ -166,7 +166,7 @@ Create a shortened URL with optional custom code, tags, and expiry.
 
 ### GET `/api/url/user`
 
-Get all URLs for logged-in user.
+Fetch all URLs for the logged-in user.
 
 **Headers**: `Authorization: Bearer <token>`
 
@@ -184,23 +184,23 @@ Get all shortened URLs by a specific tag.
 
 Redirects the user to the original URL while logging:
 
-* Device Type
-* IP Address
-* Referrer
-* Timestamp
+- Device Type
+- IP Address
+- Referrer
+- Timestamp
 
 **Responses**:
 
-* `302 Found` – Valid redirection
-* `410 Gone` – Expired link
+- `302 Found` – Valid redirection
+- `410 Gone` – Expired link
 
 ---
 
 ## 📊 Analytics API (`/api/analytics/:code`)
 
-Returns analytics for a short URL.
+Returns analytics for a specific short URL.
 
-**Response**:
+#### Example Response
 
 ```json
 {
@@ -226,29 +226,35 @@ Returns analytics for a short URL.
 
 ---
 
-## 📊 Frontend Dashboard Features
+## 🧾 Frontend Dashboard Features
 
-* Form to create short URLs with expiry, tags, and custom code
-* Displays:
+- Create short URLs with expiry, tags, and custom code
+- Dashboard shows:
 
-  * Short URL
-  * Tags
-  * QR Code
-  * Copy to clipboard
-* View analytics for each URL:
+  - Short URL
+  - Tags
+  - QR Code
+  - Copy to clipboard
 
-  * 📈 Line chart – Traffic over 7 days
-  * 📊 Pie chart – Devices (desktop/mobile)
-  * 📋 Bar chart – Referrers
-* Filter URLs by tag (dropdown)
+- View analytics for each URL:
+
+  - 📈 Line chart – Traffic over 7 days
+  - 📊 Pie chart – Device types
+  - 📋 Bar chart – Referrers
+
+- Filter URLs by tag (dropdown or select)
 
 ---
 
 ## 🧪 Postman Collection
 
-Use this to test all API endpoints:
+A Postman collection is available at:
 
-📁 `docs/postman_collection.json` (Include in your repo)
+```
+docs/postman_collection.json
+```
+
+Import this to test all endpoints with sample data.
 
 ---
 
@@ -281,24 +287,30 @@ Use this to test all API endpoints:
 
 ---
 
+## 🔁 Optional Scripts
 
+You can create custom scripts using tools like `axios`, `faker`, and random user agents to simulate:
 
+- Fake traffic
+- Time-series testing
+- Device and referrer spoofing
 
-## 🔎 Optional Scripts
-
-You can create a script using `axios` and fake user-agents to simulate traffic data for analytics testing.
+This helps visualize analytics.
 
 ---
 
-## 📤 Deployment 
+## 🚀 Deployment
 
-* **Backend**: Render, Railway, Heroku
-* **Frontend**: Vercel, Netlify
+- **Backend**: Render, Railway, Heroku (free-tier compatible)
+- **Frontend**: Vercel, Netlify
 
 ---
 
 ## 📬 Contact
 
-Made by **Deepanshu Chauhan** – for Full Stack Internship Assessment
+Made by **Deepanshu Chauhan**
+For **Full Stack Internship Assessment**
 ✅ Features: JWT, QR Codes, Analytics, Expiry, Tagging
 🎯 Tech: MERN Stack + Tailwind CSS + Chart.js
+
+---
