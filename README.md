@@ -366,12 +366,9 @@ The application uses MongoDB as the database, and consists of three main collect
 
 ---
 
-### ✅ Optional Enhancements
 
-* Add a `notifications` or `emailLogs` collection to track expiry alerts.
-* Store user preferences in a `userProfile` collection (e.g., dark mode, custom QR colors).
 
-```
+
 
 ---
 
@@ -381,7 +378,7 @@ The application uses MongoDB as the database, and consists of three main collect
 
 ## 🚀 Deployment
 
-- **Backend**: Render, Railway, Heroku (free-tier compatible)
+- **Backend**: Render
 - **Frontend**: Vercel, Netlify
 
 ---
