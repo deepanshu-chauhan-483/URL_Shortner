@@ -204,7 +204,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NGJmYzE2OGIyOWQxMGEzNDNmMzFlYiIsImlhdCI6MTc0OTgxMDMxMCwiZXhwIjoxNzQ5ODk2NzEwfQ.feTwZaXBZQAVBjARZu3bhBT61bDXosnCvC0j7f1dv10\"\n}"
+							"body": "{\n    \"token\": \"example token\"\n}"
 						}
 					]
 				}
@@ -221,7 +221,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NGJmYzE2OGIyOWQxMGEzNDNmMzFlYiIsImlhdCI6MTc0OTgxMDMxMCwiZXhwIjoxNzQ5ODk2NzEwfQ.feTwZaXBZQAVBjARZu3bhBT61bDXosnCvC0j7f1dv10",
+									"value": "example token",
 									"type": "string"
 								}
 							]
@@ -622,7 +622,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NGJmYzE2OGIyOWQxMGEzNDNmMzFlYiIsImlhdCI6MTc0OTgxMDMxMCwiZXhwIjoxNzQ5ODk2NzEwfQ.feTwZaXBZQAVBjARZu3bhBT61bDXosnCvC0j7f1dv10",
+									"value": "example token",
 									"type": "string"
 								}
 							]
