@@ -287,15 +287,95 @@ Import this to test all endpoints with sample data.
 
 ---
 
-## 🔁 Optional Scripts
+## 🗃️ Database Schema / ER Diagram
 
-You can create custom scripts using tools like `axios`, `faker`, and random user agents to simulate:
+The application uses MongoDB as the database, and consists of three main collections: `User`, `URL`, and `Visit`. Below is the Entity-Relationship Diagram and schema descriptions.
 
-- Fake traffic
-- Time-series testing
-- Device and referrer spoofing
+---
 
-This helps visualize analytics.
+### 📊 ER Diagram
+
+```
+
+┌────────────┐        ┌──────────────┐        ┌─────────────┐
+│   User     │        │     URL      │        │    Visit    │
+└────────────┘        └──────────────┘        └─────────────┘
+│ \_id (PK)   │◄───────│ \_id (PK)     │        │ \_id (PK)    │
+│ name       │        │ userId (FK)  │──────► │ urlId (FK)  │
+│ email      │        │ originalUrl  │        │ timestamp   │
+│ password   │        │ shortCode    │        │ ipAddress   │
+│ isVerified │        │ expiresAt    │        │ referrer    │
+│ createdAt  │        │ qrCode       │        │ deviceType  │
+└────────────┘        │ tags \[Array] │        │ userAgent   │
+│ createdAt    │        └─────────────┘
+└──────────────┘
+
+````
+
+---
+
+### 📁 Collections
+
+#### 🔹 `User`
+```json
+{
+  _id: ObjectId,
+  name: String,
+  email: String,
+  password: String,
+  isVerified: Boolean,
+  createdAt: Date
+}
+````
+
+#### 🔹 `URL`
+
+```json
+{
+  _id: ObjectId,
+  userId: ObjectId,         // Reference to User
+  originalUrl: String,
+  shortCode: String,        // Unique
+  tags: [String],
+  expiresAt: Date | null,
+  qrCode: String,           // Base64 or public URL
+  createdAt: Date
+}
+```
+
+#### 🔹 `Visit`
+
+```json
+{
+  _id: ObjectId,
+  urlId: ObjectId,          // Reference to URL
+  timestamp: Date,
+  ipAddress: String,
+  referrer: String,
+  deviceType: String,
+  userAgent: String
+}
+```
+
+---
+
+### 🔄 Relationships
+
+* One **User** ➝ Many **URLs**
+* One **URL** ➝ Many **Visits**
+
+---
+
+### ✅ Optional Enhancements
+
+* Add a `notifications` or `emailLogs` collection to track expiry alerts.
+* Store user preferences in a `userProfile` collection (e.g., dark mode, custom QR colors).
+
+```
+
+---
+
+
 
 ---
 
